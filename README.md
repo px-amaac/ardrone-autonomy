@@ -151,6 +151,55 @@ drone> ctrl.hover();
 drone> land();
 ```
 
+#### controller.enable()
+Enable the auto-pilot using EKF to bring drone to the current goal and maintain it there.
+
+#### controller.disable()
+Disables the auto-pilot making the controller stop all actions and send a stop command to the drone.
+
+#### controller.state()
+Returns the drones state estimated by the Kalman Filter
+
+#### controller.hover()
+Set the goal to the current state and hover there.
+
+#### controller.zero()
+Reset the Kalman filter to base state. Use this to mark a starting position after takeoff.
+
+#### controller.forward(distance, callback)
+Move forward in direction the front camera is facing by the given distance in meters.
+
+#### controller.backward(distance, callback)
+Move backward by the given distance in meters
+
+#### controller.right(distance, callback)
+Move right by the given distance in meters.
+
+#### controller.left(distance, callback)
+Move left by the given distance in meters.
+
+#### controller.cw(angle, callback)
+Rotate clockwise by the given angle. Angle is normalized to avoid turning in circles.
+If angle is greater than 180 the drone will turn the opposite direction.
+
+#### controller.ccw(angle, callback)
+Rotate counter clockwise by given angle. Angle is normalized again.
+
+#### controller.up(distance, callback)
+Raise altitude by given distance in meters.
+
+#### controller.down(distance, callback)
+Lower altitude by given distance in meters.
+
+#### controller.altitude(altitude, callback)
+Go to target altitude in meters.
+
+#### controller.yaw(yaw, callback)
+make drone go to target yaw. Yaw is in degrees.
+
+#### controller.go(goal, callback)
+Sets a new goal and enables the controller.
+
 ## License
 
 The MIT License
